@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0049)http://est0que.egloos.com/9914414#comment_9914414 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+
+<meta name="author" content="Estoque">
+<meta name="keywords" content="Frosty">
+    <meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="@egloos_zum">
+<meta property="og:url" content="http://est0que.egloos.com/9914414">
+<meta property="og:title" content="Asterisk v3.0 업데이트">
+<meta property="og:description" content="코맨트에서 비밀글 스위치가 뜨지 않는 문제 수정  이외에 소소한 정렬 문제 수정&amp;nbsp;">
+<meta property="og:image" content="http://thumbnail.egloos.net/1600x0/http://pds25.egloos.com/pds/201701/26/26/a0205726_58895a8af1218.png">
+  <link rel="shortcut icon" href="http://profile.egloos.net/a0205726.jpg">
+
+<link rel="pingback" href="http://rpc.egloos.com/rpc1">
+<link rel="alternate" type="application/rss+xml" title="Frosty" href="http://rss.egloos.com/blog/est0que">
+<title>Frosty : Asterisk v3.0 업데이트</title>
+	<script async="" src="./base_files/fbevents.js"></script><script type="text/javascript" src="./base_files/ap.js"></script>
+	<script type="text/javascript" src="./base_files/gd.js"></script>
+	<script type="text/javascript" src="./base_files/eg.js"></script>
+	<script type="text/javascript" src="./base_files/eg_new.js"></script>
+	<script type="text/javascript" src="./base_files/cr.js"></script>
+    <script type="text/javascript" src="./base_files/ins.js"></script>
+
+	<script type="text/javascript" src="./base_files/prototype_v1511.js"></script>
+	<script type="text/javascript" src="./base_files/Control.js"></script>
+	<script type="text/javascript" src="./base_files/Control.ImgModal.js"></script>
+	<script type="text/javascript" src="./base_files/compatible.js"></script>
+
+<link type="text/css" rel="stylesheet" href="./base_files/a0205726_t.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./base_files/style_comment.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./base_files/skin2_common.css" media="screen">
+<link type="text/css" rel="stylesheet" href="../css/style.css" media="screen">
+<link type="text/css" rel="stylesheet" href="./base_files/egloo_navibar.css" media="screen">
+<script type="text/javascript" src="./base_files/egloo_navibar.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+    var info = null;
+    var info = {
+        'egl' : '1',
+        'url' : 'http://est0que.egloos.com/',
+        'blogid' : 'a0205726',
+        'userid' : 'incusx',
+        'blogurl' : 'est0que',
+        'usernick' : 'Estoque',
+        'eglooid' : 'a0205726',
+        'egloourl' : 'est0que',
+        'egloonm' : 'Frosty',
+        'encegloonm' : 'RnJvc3R5',
+        'egloonick' : 'Estoque',
+        'egloosec' : '1',
+        'posttitle' : 'Asterisk v3.0 업데이트',
+        'encposttitle' : 'QXN0ZXJpc2sgdjMuMCDsl4XrjbDsnbTtirg=',
+        'encpostsummary' : 'DQrsvZTrp6jtirjsl5DshJwg67mE67CA6riAIOyKpOychOy5mOqwgCDrnKjsp4Ag7JWK64qUIOusuOygnCDsiJjsoJUNCuydtOyZuOyXkCDshozshoztlZwg7KCV66CsIOusuOygnCDsiJjsoJUmYW1wO25ic3A7',
+        'postnick' : 'Estoque',
+        'photo'    : '0',
+        'adm'    : '0',
+        'pagekey' : '9914414',
+        'viewopt' : '1',
+        'navcolor' : 'w',
+        'navstatic' : '1',	
+        'pg' : '1',
+        'xhtml' : '1'
+    };
+
+    var html= '<div id="navibar" onmouseover="nav_view(\'hid\',\''+ info.navstatic +'\',\'1\',\''+info.navcolor+'\',\''+info.xhtml+'\',event)" onmouseout="nav_view(\'hid\',\''+ info.navstatic +'\',\'0\',\''+info.navcolor+'\',\'' + info.xhtml + '\',event)" style="min-width: 1000px; width: 100% !important; width:100%;">'
+            +'<ul class="navigator">'
+            +'<li class="home"><div class="navi_menu"><a href="http://www.egloos.com/" title="이글루스홈" onfocus="blur();" >이글루스홈</a></div></li>'
+            +'<li class="alarm"><div class="navi_menu"><a href="javascript:announce_click();" title="마이 업데이트알림" onfocus="blur();" >알림<img src="http://md.egloos.com/img/nav/ico_new_none.gif" class="ico" alt="" border="0"/></a></div></li>'
+            +'<li id="egloo_link_li" class="egloolink">'
+            + nav_updatepostlist(info.egloourl)
+            +'</li>'
+            +'<li class="linkadd">'
+            + nav_addlink(info.userid, info.blogid, info.eglooid, info.egloourl, info.egloonm, info.egloosec,info.photo)
+            +'</li>'
+            +'<li class="checkpost">'
+            + nav_checkpost(info.blogid, info.eglooid, info.egloourl, info.pagekey, info.pg, info.pagekey,info.photo)
+            +'</li>'
+            +'<li class="sharebtn">'
+            + nav_sharebtn(info.blogid, info.eglooid, info.egloourl, info.egloonm, info.encegloonm, info.egloonick, info.pagekey, info.posttitle, info.postnick, info.encposttitle, info.encpostsummary, info.photo, info.adm)
+            +'</li>'
+            +'</ul>'
+            +'<ul class="naviadminmenu">'
+            + nav_admin(info)
+            +'</ul>'
+            +'</div>'
+            +'<div id="navibar_hiddenlayer" class="navibar_hiddenlayer" onmouseover="nav_view(\'v\',\''+ info.navstatic +'\',\'1\',\''+info.navcolor+'\',\''+info.xhtml+'\')"></div>';
+            if(info.viewopt == 1){
+                html +='<div id="navbar_space" style="border: 1px solid transparent;_border:0; height: 24px; display: block;"></div>';
+            } else {
+                html +='<div id="navbar_space" style="border: 1px solid transparent;_border:0; height: 24px; display: none;"></div>';
+            }
+    document.write(html);
+    nav_view('c',info.navstatic,info.viewopt,info.navcolor,info.xhtml,null);
+//]]>
+</script><style type="text/css">
+:root .adsbygoogle
+{ display: none !important; }</style><style type="text/css">
+:root *[mq660fd][hidden] { display: none !important; }</style><style id="stylerStyle"></style><script id="stylerScript"></script></head><body><div id="navibar" onmouseover="nav_view(&#39;hid&#39;,&#39;1&#39;,&#39;1&#39;,&#39;w&#39;,&#39;1&#39;,event)" onmouseout="nav_view(&#39;hid&#39;,&#39;1&#39;,&#39;0&#39;,&#39;w&#39;,&#39;1&#39;,event)" style="min-width: 1000px; width: 100% !important; display: block;" class="static"><ul class="navigator"><li class="home"><div class="navi_menu"><a href="http://www.egloos.com/" title="이글루스홈" onfocus="blur();">이글루스홈</a></div></li><li class="alarm"><div class="navi_menu"><a href="javascript:announce_click();" title="마이 업데이트알림" onfocus="blur();">알림<img src="./base_files/ico_new_none.gif" class="ico" alt="" border="0"></a></div></li><li id="egloo_link_li" class="egloolink"><div class="navi_menu"><a href="http://est0que.egloos.com/9914414#;" onclick="nav_show(  &#39;recent&#39;, &#39;est0que&#39;);" title="이글루링크 새글" onfocus="blur();" class="over">이글루링크 새글</a></div><div id="navi_dropmenu_updatepost" class="navi_dropmenu" style="position:absolute;top:26px;left:-1px;display:none;"><ul class="sub_list sub_egloolink"></ul></div></li><li class="linkadd"><div class="navi_menu"><span class="nolinkadd">링크하기</span></div></li><li class="checkpost"><div class="navi_menu"><span class="nocheckpost">메모하기</span></div></li><li class="sharebtn"><div class="navi_menu">    <a href="http://est0que.egloos.com/9914414#;" onclick="sharebtn_show();" title="공유하기" onfocus="blur();" class="over">공유하기</a></div><div id="navi_dropmenu_sharebtn" class="navi_dropmenu" style="position: absolute; top: 26px; left: -1px; display: none;">    <ul class="sub_list sub_share">        <li class="li_shareicon"><a href="http://est0que.egloos.com/9914414#;" class="sub_over" onclick="window.open(&#39;http://csp.cyworld.com/bi/bi_recommend_pop.php?svccode=250&amp;url=http%3A%2F%2Fest0que.egloos.com%2F9914414&amp;title=QXN0ZXJpc2sgdjMuMCDsl4XrjbDsnbTtirg%3D&amp;thumbnail=&amp;summary=DQrsvZTrp6jtirjsl5DshJwg67mE67CA6riAIOyKpOychOy5mOqwgCDrnKjsp4Ag7JWK64qUIOusuOygnCDsiJjsoJUNCuydtOyZuOyXkCDshozshoztlZwg7KCV66CsIOusuOygnCDsiJjsoJUmYW1wO25ic3A7&amp;writer=Estoque%20(%EC%9D%B4%EA%B8%80%EB%A3%A8%EC%8A%A4)&#39;, &#39;recom_icon_pop&#39;, &#39;width=400,height=364,scrollbars=no,resizable=no&#39;);" title="싸이월드 공감"><img src="./base_files/ico_clog.gif" alt="싸이월드 공감"> 싸이월드 공감</a></li>        <li class="li_shareicon"><a href="http://est0que.egloos.com/9914414#;" class="sub_over" onclick="window.open(&#39;http://twitter.com/share?url=http%3A%2F%2Fest0que.egloos.com%2F9914414&amp;text=Asterisk%20v3.0%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,resizable=1,width=626,height=436&#39;);" title="트위터"><img src="./base_files/icon_twitter.gif" alt="트위터"> 트위터</a></li>        <li class="li_shareicon"><a href="http://est0que.egloos.com/9914414#;" class="sub_over" onclick="window.open(&#39;http://www.facebook.com/sharer.php?u=http%3A%2F%2Fest0que.egloos.com%2F9914414&amp;t=Asterisk%20v3.0%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8&#39;,&#39;sharer&#39;,&#39;toolbar=0,status=0,resizable=1,width=626,height=436&#39;);" title="페이스북"><img src="./base_files/icon_facebook.gif" alt="페이스북"> 페이스북</a></li>    </ul></div></li></ul><ul class="naviadminmenu"><li id="nav_nick" class="nick" onmouseover="admin_layer(this);" onmouseout="layer_init(&#39;&#39;);">		<div class="navi_menu"><a href="http://est0que.egloos.com/9914414#;" title="" class="over" onfocus="blur();"><span class="e_nick"><img src="./base_files/a0205726.ico" width="16" height="16" alt=""></span><span class="navi_nickname">Estoque</span></a></div>		<div id="nav_nick_sub" class="navi_dropmenu" style="display:none;position:absolute;top:26px;left:0px;">			<ul class="sub_list sub_nick">				<li><a href="http://est0que.egloos.com/" title="" class="sub_over" onfocus="blur();">내이글루</a></li>				<li><a href="http://est0que.egloos.com/photo" title="" class="sub_over" onfocus="blur();">내포토로그</a></li>				<li><a href="http://valley.egloos.com/my/index.php" title="" class="sub_over" onfocus="blur();">마이리더</a></li>			</ul>		</div></li><li id="nav_newpost" class="newpost"><div class="navi_menu"><a href="http://www.egloos.com/egloo/insert.php?eid=a0205726" title="새글쓰기" onfocus="blur();">새글쓰기</a></div></li><li id="nav_shortcut" class="shortcut" onmouseover="shortcut_show(this,&#39;a0205726&#39;);" onmouseout="layer_init(&#39;&#39;);">	<div class="navi_menu"><a href="http://est0que.egloos.com/9914414#;" title="바로가기" class="over" onfocus="blur();">바로가기</a></div>	<div id="nav_shortcut_sub" class="navi_dropmenu" style="display:none;position:absolute;top:26px;left:-1px;">	<ul class="sub_list sub_shortcut">        <li><a href="http://admin.egloos.com/" title="이글루관리" class="sub_over" onfocus="blur();">이글루관리</a></li>        <li><a href="http://www.egloos.com/adm/design/skin_editor/?eid=a0205726&amp;tab=template,1" title="스킨에디터" class="sub_over" onfocus="blur();">스킨에디터</a></li>        <li><a href="http://admin.egloos.com/stat/dashboard" title="이글루통계" class="sub_over" onfocus="blur();">이글루통계</a></li>		<li class="line"><div></div></li>	</ul></div></li><li class="loginout"><div class="navi_menu"><a href="http://sec.egloos.com/logout.php" title="로그아웃" onfocus="blur();">로그아웃</a></div></li><li id="nav_admin_on" class="admin" onmouseover="admin_layer(this);" onmouseout="layer_init(&#39;&#39;);"><div class="navi_menu"><a href="http://est0que.egloos.com/9914414#;" title="네비바설정" class="over" onfocus="blur();">네비바설정</a></div><div id="nav_admin_on_sub" class="navi_dropmenu" style="display:none;position:absolute;top:26px;left:-81px;">	<ul class="sub_list sub_admin">	<li id="nav_fix" onclick="nav_admin_change(&#39;nav_fix&#39;,&#39;0&#39;);"><a href="http://est0que.egloos.com/9914414#" title="브라우저에 고정" class="sub_over" onfocus="blur();"><span class="check check_on">브라우저에 고정</span></a></li>	<li id="nav_hidden" onclick="nav_admin_change(&#39;nav_hidden&#39;,&#39;0&#39;);"><a href="http://est0que.egloos.com/9914414#" title="자동숨기기" class="sub_over" onfocus="blur();"><span class="check">자동숨기기</span></a></li>	<li onmouseover="nav_config(1);" onmouseout="nav_config(2);">			<a href="http://est0que.egloos.com/9914414#" title="네비바 색상변경" class="sub sub_over" onfocus="blur();"><span class="check">네비바 색상변경</span></a>			<div id="nav_config_sub" class="navi_dropmenu2" style="display:none;position:absolute;top:0px;left:-63px;">				<ul id="nav_color" class="sub_list sub_admin2">		<li id="nav_white" onclick="nav_admin_change(&#39;color&#39;,&#39;W&#39;);"><a href="http://est0que.egloos.com/9914414#;" title="화이트" class="sub_over" onfocus="blur();"><span class="check check_on">화이트</span></a></li>		<li id="nav_gray" onclick="nav_admin_change(&#39;color&#39;,&#39;G&#39;);"><a href="http://est0que.egloos.com/9914414#;" title="그레이" class="sub_over" onfocus="blur();"><span class="check">그레이</span></a></li>		<li id="nav_black" onclick="nav_admin_change(&#39;color&#39;,&#39;B&#39;);"><a href="http://est0que.egloos.com/9914414#;" title="블랙" class="sub_over" onfocus="blur();"><span class="check">블랙</span></a></li>		</ul>			</div>		</li>	</ul></div></li></ul></div><div id="navibar_hiddenlayer" class="" onmouseover="nav_view(&#39;v&#39;,&#39;1&#39;,&#39;1&#39;,&#39;w&#39;,&#39;1&#39;)" style="display: none;"></div><div id="navbar_space" style="border: 1px solid transparent;_border:0; height: 24px; display: block;"></div>
+<link type="text/css" rel="stylesheet" href="./base_files/popup.css">
+<link type="text/css" rel="stylesheet" href="./base_files/button.css">
+<link type="text/css" rel="stylesheet" href="./base_files/egloos_post_style.css">
+<script type="text/javascript" src="./base_files/Modal.js"></script>
+<script type="text/javascript" src="./base_files/Modal.Center.js"></script>
+<script type="text/javascript" src="./base_files/Modal.BookmarkDlg.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+var browserHeight = function() {
+    var myHeight = 0;
+    if( typeof( window.innerHeight ) == 'number' ) {
+        myHeight = window.innerHeight;
+    } else if( document.documentElement && document.documentElement.clientHeight ) {
+        myHeight = document.documentElement.clientHeight;
+    } else if( document.body && document.body.clientHeight ) {
+        myHeight = document.body.clientHeight;
+    }
+    return myHeight;
+};
+
+function focusCommentBox() {
+        var cmtObject = document.getElementById('write_commet_box');
+        if(cmtObject === null || cmtObject === undefined ) {
+            var resultDiv = document.getElementById('cmt_info');
+            var message = resultDiv.getAttribute("data-message");
+            if(message !== null || message !== '') {
+                alert(message);
+            }
+        } else {
+            var size = cmtObject.getHeight() + cmtObject.offsetTop + 20;
+            var height = browserHeight();
+            var result = size - height;
+            result = (result > 0 ) ? result: 0;
+
+            window.scrollTo(0, result);
+        }
+
+}
+
+
+Event.observe(window, 'load', function() {
+    new Modal.BookmarkDlg('egloo_bookmark', {overlay: true,
+                'groupURL'     : "/exec/egloo_bookmark_group.php",
+                'remoteURL'    : "/exec/egloo_insbookmark_exec.php"});
+    if('est0que'==''){
+	    	copy_contents('est0que.egloos.com','Estoque','2');
+    }
+    var hash = window.location.hash;
+
+    // if(hash !==null && hash !== undefined ) {
+    if(hash && hash.length > 0) {
+        var name  = hash.substr(1, hash.length -1 );
+        var search = $$('[name="'+name+'"]');
+
+        if(hash.indexOf('comment_')>=0) {
+            focusCommentBox();
+        } else if(search.length == 0 ) {
+             feedbackview('post_trackback_hash', 'a0205726', 9914414, 0, 0);
+        }
+    }
+
+
+});
+
+
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+// function ndrclick2(pndrpageid, pndrregionid) {
+// i = new Image();
+// i.src = "http://statclick.egloos.com/stat/statclick.tiff?cp_url=[click_ndr.nate.com/??ndrpageid="+pndrpageid+"&ndrregionid="+pndrregionid+"]";
+// }
+//]]>
+</script>
+
+
+<iframe name="cmtviewfrm" id="cmtviewfrm" src="./base_files/saved_resource.html" width="0" height="0" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="display:block;border:0px;"></iframe>
+<div class="body">
+  <div class="wrap">
+    
+    <div class="header">
+      <h1>
+        <a href="http://est0que.egloos.com/" title="Frosty">Frosty</a>
+      </h1>
+      <div class="topmenu">
+        <a href="http://est0que.egloos.com/photo/" title="포토로그">포토로그</a> <a href="http://est0que.egloos.com/228343">Guestbook</a> 
+      </div>
+    </div>
+    
+    <div class="container f_clear">
+      
+      <div class="left_wrap f_clear">
+        
+        <div class="content_wrap f_clear">
+          
+          <div id="section_sidebar1" class="column">
+            <div class="widget menu_profile">
+              
+              <h3>프로필</h3>
+              <div class="widget_content">
+                <div class="profile_image">
+                  <a href="javascript:void(0);" onclick="Control.Modal.openDialog(this, event, &#39;http://pds25.egloos.com/logo/201312/22/26/a0205726.png&#39;);"><img src="./base_files/a0205726.png" width="160" height="160" border="0" alt=""></a>
+                </div>
+                <div class="profile_desc">
+                  이글루스 코드 제한 좆같다. 3만자 이상으로 늘려 달라. 어짜피 120kb 이상 안 나온다. Skin dev centre @egloos<span class="profile_usernick fn"><span class="by">by</span> Estoque</span>
+                </div>
+                <div class="profile_prize">
+                  
+                </div>
+                <div class="bg_profile"></div>
+              </div>
+            </div>
+            <div class="widget menu_category">
+              
+              <h3>카테고리</h3>
+              <ul class="widget_content">
+                <li class=""><a href="http://est0que.egloos.com/category/">전체</a><span class="count">208</span>
+                </li><li class=""><a href="http://est0que.egloos.com/category/CARS">CARS</a><span class="count">22</span>
+                </li><li class=""><a href="http://est0que.egloos.com/category/SKIN">SKIN</a><span class="count">18</span>
+                </li><li class=""><a href="http://est0que.egloos.com/category/Screenshot">Screenshot</a><span class="count">0</span>
+                </li><li class=""><a href="http://est0que.egloos.com/category/EV">EV</a><span class="count">22</span>
+                </li><li class=""><a href="http://est0que.egloos.com/category/Music">Music</a><span class="count">0</span>
+                </li><li class=""><a href="http://est0que.egloos.com/category/The%20Grand%20Tour">The Grand Tour</a><span class="count">17</span>
+                </li><li class=""><a href="http://est0que.egloos.com/category/Game">Game</a><span class="count">104</span>
+                </li><li class=""><a href="http://est0que.egloos.com/category/%EB%AF%B8%EB%B6%84%EB%A5%98">미분류</a><span class="count">25</span>
+                </li>
+              </ul>
+            </div>
+            <div class="widget menu_selfmenu">
+              
+              <h3>메뉴릿</h3>
+              <ul class="widget_content">
+                <li><a href="http://est0que.egloos.com/photo/">포토로그</a>
+                </li><li><a href="http://est0que.egloos.com/228343">Guestbook</a>
+                </li>
+              </ul>
+            </div>
+            <div class="widget menu_archive" id="widget_menu_archive">
+              
+              <h3>이전글 목록</h3>
+              <div class="widget_content">
+                <ul>
+                  <li><a href="http://est0que.egloos.com/archives/2017/01">2017년 01월</a><span class="count">6</span>
+                  </li><li><a href="http://est0que.egloos.com/archives/2016/12">2016년 12월</a><span class="count">3</span>
+                  </li><li><a href="http://est0que.egloos.com/archives/2016/11">2016년 11월</a><span class="count">1</span>
+                  </li><li><a href="http://est0que.egloos.com/archives/2016/10">2016년 10월</a><span class="count">4</span>
+                  </li><li><a href="http://est0que.egloos.com/archives/2016/09">2016년 09월</a><span class="count">38</span>
+                  </li>
+                </ul>
+                <div class="allview">
+                  <a href="http://est0que.egloos.com/archives">more...</a>
+                </div>
+              </div>
+            </div>
+            <div id="sidebar1_blank" class="blank"></div>
+          </div>
+          <div id="section_content" class="content">
+            
+            <div id="section_widemenu1" class="widemenu"></div>
+            
+            <div>
+              <div class="post_view">
+                
+                  
+                  <div class="post_title_area">
+                    <div class="post_title">
+                      <h2 class="entry-title" title="#">
+                        <a href="http://est0que.egloos.com/9914414" name="9914414" title="Asterisk v3.0 업데이트">Asterisk v3.0 업데이트</a> <span class="post_title_author"><span class="by">by</span> Estoque</span>
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="post_content entry-content">
+                    <div class="hentry "><span class="copyright_entry" style="display:block;" title="Asterisk v3.0 업데이트@@**@@http://est0que.egloos.com/9914414"></span><div><div style="text-align:center"><img class="image_mid" border="0" onmouseover="this.style.cursor=&#39;pointer&#39;" alt="" src="./base_files/a0205726_58895a8af1218.png" width="1600" height="371.558245083" onclick="Control.Modal.openDialog(this, event, &#39;http://pds25.egloos.com/pds/201701/26/26/a0205726_58895a8af1218.png&#39;, 2644, 614);" style="cursor: pointer;"></div></div><div><br></div>코맨트에서 비밀글 스위치가 뜨지 않는 문제 수정<div><br></div><div>이외에 소소한 정렬 문제 수정&nbsp;</div><br><div align="center"> <script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-3680635267321659" data-ad-slot="4675691326" mq660fd="" hidden=""></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><br>
+       <!--
+       <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		    xmlns:dc="http://purl.org/dc/elements/1.1/"
+		    xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+       <rdf:Description
+	        rdf:about="http://est0que.egloos.com/9914414"
+	        dc:identifier="http://est0que.egloos.com/9914414"
+	        dc:title="Asterisk v3.0 업데이트"
+	        trackback:ping="http://est0que.egloos.com/tb/9914414"/>
+       </rdf:RDF>
+       -->
+</div>  <iframe src="./base_files/sns_share_frame.html" scrolling="no" frameborder="0" style="border:none;overflow:hidden;width:100%;height:20px;" allowtransparency="true"></iframe>
+        <div class="post_meta_area f_clear">
+            <h3>포스트 메타 정보</h3>
+            <div class="post_meta_menu">
+            
+            
+                    <h4 id="tab1_9914414" onclick="PostMeta.show_tab(1,9914414,&#39;a0205726&#39;)" class="post_meta_title1_on">퍼블리싱 및 추천</h4>
+                    <ul id="tab_c1_9914414" class="post_meta_content">
+                            <li><strong>내보내기</strong>
+                                <ul><li>밸리 : <a href="http://valley.egloos.com/theme/egloos" target="_blank"> 이글루스</a>  <em class="date">2017/01/26 11:10</em></li>
+                                </ul>
+                            </li></ul>
+            <h4 id="tab2_9914414" onclick="PostMeta.show_tab(2,9914414,&#39;a0205726&#39;,6)" class="post_meta_title2">같은 카테고리의 글</h4>
+        <ul id="tab_c2_9914414" class="post_meta_content" style="display: none;"><li><a href="http://est0que.egloos.com/9878154">Asterisk의 최적화된 광고 단위 가이드 </a> <em class="date">2016/09/07 00:05</em></li><li><a href="http://est0que.egloos.com/9870870">Asterisk 1.0.0 공개</a> <em class="date">2016/08/15 21:45</em></li><li><a href="http://est0que.egloos.com/9868722">Asterisk* - 이글루스 스킨 [WIP]</a> <em class="date">2016/07/28 17:14</em></li><li><a href="http://est0que.egloos.com/9868536">Hare for egloos v2 - 이글루스 반응형 스킨 업데이트 + 후기</a> <em class="date">2016/07/26 23:56</em></li><li><a href="http://est0que.egloos.com/9635665">Hare for egloos - 이글루스 반응형 스킨</a> <em class="date">2015/01/05 10:11</em></li></ul>
+            </div>
+        </div>
+        
+                  </div>
+                  <div class="post_footer_area f_clear">
+                    <div class="post_tail">
+                      <a href="http://est0que.egloos.com/9914414#trb" onclick="feedbackview(&#39;post_trackback&#39;, &#39;a0205726&#39;, 9914414, 0, 0);return false;" class="post_tail_trbk">트랙백(<span id="trbcnt9914414" class="count">0</span>)</a><span class="post_tail_cmmt"> 덧글(<span id="cmtcnt9914414" class="count">0</span>)</span>
+                    </div>
+                    <div class="post_admin">
+                      <a href="http://www.egloos.com/egloo/update.php?eid=a0205726&amp;srl=9914414&amp;rtnurl=http%3A%2F%2Fest0que.egloos.com%2F9914414" class="post_admin_edit">수정</a> <a href="http://est0que.egloos.com/9914414#del" onclick="delPost(&#39;incusx&#39;,&#39;a0205726&#39;,&#39;9914414&#39;,&#39;http%3A%2F%2Fest0que.egloos.com%2F9914414&#39;,&#39;Asterisk v3.0 업데이트&#39;); return false;" class="post_admin_del">삭제</a> 
+                    </div>
+                  </div>
+                  <hr class="line">
+                   <div class="post_link">
+              <div class="post_trackback" id="trackback_9914414"></div>  <div class="post_comment" id="comment_9914414">
+              
+              <h3>덧글</h3> 
+              <ul class="comment_list">
+                
+              </ul>
+<div id="write_commet_box" class="comment_write">
+   <fieldset>
+       <legend>댓글 입력 영역</legend>
+   <form id="cmtform9914414" name="cmtform9914414" target="cmtviewfrm" action="http://est0que.egloos.com/exec/egloo_comment_exec.php" method="post" style="margin:0px;" onsubmit="return runComment(this,1);">
+       <input type="hidden" name="eid" value="a0205726">
+       <input type="hidden" name="srl" value="9914414">
+       <input type="hidden" name="tid" value="">
+       <input type="hidden" name="subject" value="Asterisk v3.0 업데이트">       <input type="hidden" name="cmtsrl" value="">
+       <input type="hidden" name="xhtml" value="">
+       <input type="hidden" name="adview" value="">
+       <input type="hidden" name="ismenu" value="0">
+       <input type="hidden" name="ismain" value="">
+
+       <div class="comment_info">
+           <span class="comment_now">
+               <img src="./base_files/a0205726_50.jpg" alt="">
+               <a href="http://est0que.egloos.com/" title="http://est0que.egloos.com/" target="_blank">Estoque</a>
+           </span>
+       </div>
+       <textarea id="comment" name="comment" class="comment_field" title="덧글 입력 영역" rows="5" cols="50"></textarea>
+       <div class="comment_btn f_clear">
+           <input type="checkbox" id="no_open" name="security"> <label for="no_open">비공개</label>
+           <input type="image" value="댓글등록" src="./base_files/btn_comment.gif" class="comment_submit">
+       </div>
+   </form>
+   <form id="replyform9914414" name="replyform9914414" target="cmtviewfrm" action="http://est0que.egloos.com/exec/egloo_comment_exec.php" method="post" style="margin:0px;">
+       <input type="hidden" name="eid" value="a0205726">
+       <input type="hidden" name="srl" value="9914414">
+       <input type="hidden" name="tid" value="P-Ipe1R9zSqizH0bDOyauWC--F2YpYq0ZW7jw2g7k0w.">
+       <input type="hidden" name="subject" value="Asterisk v3.0 업데이트">
+       <input type="hidden" name="cmtsrl" value="">
+       <input type="hidden" name="name" value="">
+       <input type="hidden" name="homepage" value="">
+       <input type="hidden" name="passwd" value="">
+       <input type="checkbox" name="security" value="" style="display:none;">
+       <input type="hidden" name="comment" value="">
+       <input type="hidden" name="ismenu" value="0">
+       <input type="hidden" name="ismain" value="">
+       <input type="hidden" name="xhtml" value="">
+       <input type="hidden" name="adview" value="">
+       <input type="hidden" name="page" id="replyform_page" value="1">
+   </form>
+   <form id="editform9914414" name="editform9914414" target="cmtviewfrm" action="http://est0que.egloos.com/exec/egloo_editcomment_exec.php" method="post" style="margin:0px;">
+       <input type="hidden" name="eid" value="a0205726">
+       <input type="hidden" name="srl" value="9914414">
+       <input type="hidden" name="tid" value="P-Ipe1R9zSqizH0bDOyauWC--F2YpYq0ZW7jw2g7k0w.">
+       <input type="hidden" name="subject" value="Asterisk v3.0 업데이트">
+       <input type="hidden" name="cmtsrl" value="">
+       <input type="hidden" name="writer" value="">
+       <input type="hidden" name="name" value="">
+       <input type="hidden" name="homepage" value="">
+       <input type="hidden" name="passwd" value="">
+       <input type="checkbox" name="security" value="" style="display:none;">
+       <input type="hidden" name="comment" value="">
+       <input type="hidden" name="ismenu" value="0">
+       <input type="hidden" name="ismain" value="">
+       <input type="hidden" name="xhtml" value="">
+       <input type="hidden" name="adview" value="">
+       <input type="hidden" name="page" id="editform_page" value="1">
+   </form>
+   </fieldset>
+</div>  
+            </div>
+            </div> 
+                
+                
+                
+                
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="post_navi">
+              
+              <div class="next"><a href="http://est0que.egloos.com/9910944"><span class="txt">이전글 : </span>더 그랜드 투어 - 바베이도스에서 럼 마시기 </a></div> 
+            </div>
+            
+            
+            <div id="section_widemenu2" class="widemenu"></div>
+          </div>
+          
+          <div id="section_sidebar2" class="column">
+            <div class="widget menu_blogroll" id="widget_menu_blogroll">
+              
+              <h3>블로그롤</h3>
+              <div class="widget_content">
+                <ul>
+                  <li>
+                    <span class="blogroll_gravatar"><a href="http://keepitreal.egloos.com/" title="씸플리씨리"><img src="./base_files/c0029849_33.jpg" alt=""></a></span> <span class="blogroll_name"> <a href="http://keepitreal.egloos.com/" title="씸플리씨리">씸플리씨리</a></span> <span class="blogroll_nick"><span class="by">by</span>
+                    지구밖</span>
+                  </li><li>
+                    <span class="blogroll_gravatar"><a href="http://sephia.egloos.com/" title="세피아의 아티스트 연구소"><img src="./base_files/f0095371_33.jpg" alt=""></a></span> <span class="blogroll_name"> <a href="http://sephia.egloos.com/" title="세피아의 아티스트 연구소">세피아의 아티스트 연구소</a></span> <span class="blogroll_nick"><span class="by">by</span>
+                    세피아</span>
+                  </li><li>
+                    <span class="blogroll_gravatar"><a href="http://avantgarde.egloos.com/" title="아방가르드의 스튜디오"><img src="./base_files/a0001620_33.jpg" alt=""></a></span> <span class="blogroll_name"> <a href="http://avantgarde.egloos.com/" title="아방가르드의 스튜디오">아방가르드의 스튜디오</a></span> <span class="blogroll_nick"><span class="by">by</span>
+                    아방가르드</span>
+                  </li>
+                </ul>
+                <div class="allview">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="widget menu_trackback">
+              
+              <h3>최근 트랙백</h3>
+              <div class="widget_content">
+                <ul>
+                  <li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9870634#868229">3D 프린팅으로 로켓엔진을 만들다</a></span><em class="fn">Beyond the Space</em> <em class="date">08/23</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/194346#443627">Iphone 5 ケース</a></span><em class="fn">ジミーチュウ バッグ 982646070 1f%0 3l..</em> <em class="date">07/29</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/194346#437979">toms sverige</a></span><em class="fn">オークリー</em> <em class="date">07/28</em>
+                  </li>
+                </ul>
+                <div class="allview"></div>
+              </div>
+            </div>
+            <div class="widget menu_comment" id="widget_menu_comment">
+              
+              <h3>최근 덧글</h3>
+              <div class="widget_content">
+                <ul>
+                  <li>
+                    <span class="desc"><a href="http://est0que.egloos.com/194645#201595.01">test</a></span><em class="fn">by Estoque</em> <em class="date">11:08</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/194645#201595">test</a></span><em class="fn">by Estoque</em> <em class="date">11:08</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9905720#199715.01">크리스 에반스는 재미도 없지만 너무 시끄러워서 짜증 나더라고요
+..</a></span><em class="fn">by Estoque</em> <em class="date">12/26</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9905720#199715">23시리즈는 정말 최악이었습니다
+사공이 너무 많아서 갈피를 못 잡..</a></span><em class="fn">by 아방가르드</em> <em class="date">12/26</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9885126#194955.01">벤 콜린스는 확정이 아닙니다. 그냥 이전에 클락슨, 해먼드, 메..</a></span><em class="fn">by Estoque</em> <em class="date">10/8</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9885126#194955">드라이버가 벤 콜린스면 이건 순 제목만 탑기어가 아니지 알맹이는...</a></span><em class="fn">by IOTA옹</em> <em class="date">10/7</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9881841#193823.01">확실히 게임쪽은 AMD에 비해 엔비디아가 신경을 많이 써주는 것 같..</a></span><em class="fn">by Estoque</em> <em class="date">9/20</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9881841#193823">그래도 녹화가 제대로 된다는 그 자체로 부럽군요. AMD는... ㅠ..</a></span><em class="fn">by RuBisCO</em> <em class="date">9/19</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9879679#193493.01">그렇군요 상세한 설명 감사합니다.
+
+GTA V 번역이 영시원찮은 부분..</a></span><em class="fn">by Estoque</em> <em class="date">9/11</em>
+                  </li><li>
+                    <span class="desc"><a href="http://est0que.egloos.com/9879679#193493">한국전쟁이 아니라 베트남 전쟁으로 보이네요. 한국전쟁 참전자면 ..</a></span><em class="fn">by 주사위</em> <em class="date">9/11</em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="widget menu_photolog">
+              
+              <h3>포토로그</h3>
+              <div class="widget_content">
+                <div class="thumb">
+                  <ul>
+                    
+                    <li><a href="http://est0que.egloos.com/photo/album/17765/276550/" title=""><img src="./base_files/a0205726_5797ea7b31645.jpg" border="0" alt=""></a>
+                    </li><li><a href="http://est0que.egloos.com/photo/album/17765/276547/" title=""><img src="./base_files/a0205726_5797ea78edd7d.jpg" border="0" alt=""></a>
+                    </li><li><a href="http://est0que.egloos.com/photo/album/17765/276549/" title=""><img src="./base_files/a0205726_5797ea7ac555a.jpg" border="0" alt=""></a>
+                    </li><li><a href="http://est0que.egloos.com/photo/album/17765/276545/" title=""><img src="./base_files/a0205726_5797ea781d953.jpg" border="0" alt=""></a>
+                    </li><li><a href="http://est0que.egloos.com/photo/album/17765/276546/" title=""><img src="./base_files/a0205726_5797ea7878e50.jpg" border="0" alt=""></a>
+                    </li><li><a href="http://est0que.egloos.com/photo/album/17765/276548/" title=""><img src="./base_files/a0205726_5797ea799b547.jpg" border="0" alt=""></a>
+                    </li>
+                  </ul>
+                  <div class="photolog_name">
+                    <a href="http://est0que.egloos.com/photo" title="Estoque&#39;s Photolog">Estoque's Photolog</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="sidebar2_blank" class="blank"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sidebar_wrap f_clear">
+      
+      <div id="section_sidebar3" class="column">
+        <div class="widget menu_search">
+          
+          
+          <div class="widget_content f_clear">
+            <fieldset>
+  <legend>블로그내 검색 영역</legend>
+   <form action="http://est0que.egloos.com/" method="post" onsubmit="return go_search(this);">
+    <input type="hidden" name="type" id="type" value="search">
+    <input name="srch_kwd" id="srch_kwd_2" type="text" class="input_search" value="" size="10" title="검색입력영역" maxlength="30">
+    <input type="submit" class="submit" value="">
+  </form>
+</fieldset>
+<p style="margin-top:3px;text-align:left"><a href="http://zum.com/" target="_blank"><img src="./base_files/txt_power_161028.png"></a></p>
+          </div>
+        </div>
+        <div class="widget menu_pingback">
+          
+          <h3>최근 핑백</h3>
+          <div class="widget_content">
+            <ul>
+              <li>
+                <span class="desc"><a href="http://est0que.egloos.com/250425">Meltdown : 이글루스 3일차 - 장점과 단점 정리</a></span><em class="fn"></em> <em class="date">01/07</em>
+              </li><li>
+                <span class="desc"><a href="http://est0que.egloos.com/201838">Meltdown : 이글루스 분점 개점 3일차 - 장점과 단점 정리</a></span><em class="fn"></em> <em class="date">12/29</em>
+              </li>
+            </ul>
+            <div class="allview"></div>
+          </div>
+        </div>
+        <div id="sidebar3_blank" class="blank"></div>
+      </div>
+      
+      <div id="section_sidebar4" class="column">
+        <div class="widget menu_photocmt" id="widget_menu_photocmt">
+          
+          <h3>최근 포토로그덧글</h3>
+          <div class="widget_content">
+            <ul>
+              
+            </ul>
+          </div>
+        </div>
+        <div id="sidebar4_blank" class="blank"></div>
+      </div>
+      
+      <div id="section_sidebar5" class="column">
+        <div class="widget menu_tagcloud">
+          
+          <h3>태그</h3>
+          <div class="widget_content">
+            <a href="http://est0que.egloos.com/tag/%ED%98%B8%EB%9D%BC%EC%9D%B4%EC%A6%8C3" rel="tag" class="tag_level_1">호라이즌3</a>
+<a href="http://est0que.egloos.com/tag/gtav" rel="tag" class="tag_level_3">gtav</a>
+<a href="http://est0que.egloos.com/tag/%EC%8B%9C%EB%A6%AC%EC%A6%8824" rel="tag" class="tag_level_1">시리즈24</a>
+<a href="http://est0que.egloos.com/tag/%EB%8D%94%EA%B7%B8%EB%9E%9C%EB%93%9C%ED%88%AC%EC%96%B4" rel="tag" class="tag_level_2">더그랜드투어</a>
+<a href="http://est0que.egloos.com/tag/%EA%B3%B5%EB%9E%B5" rel="tag" class="tag_level_3">공략</a>
+<a href="http://est0que.egloos.com/tag/ITS" rel="tag" class="tag_level_1">ITS</a>
+<a href="http://est0que.egloos.com/tag/%EC%97%91%EC%8A%A4%EB%B0%95%EC%8A%A4%EC%9B%90" rel="tag" class="tag_level_2">엑스박스원</a>
+<a href="http://est0que.egloos.com/tag/%ED%83%91%EA%B8%B0%EC%96%B4" rel="tag" class="tag_level_2">탑기어</a>
+<a href="http://est0que.egloos.com/tag/gta" rel="tag" class="tag_level_3">gta</a>
+<a href="http://est0que.egloos.com/tag/%ED%95%9C%EA%B8%80%EC%9E%90%EB%A7%89" rel="tag" class="tag_level_3">한글자막</a>
+<a href="http://est0que.egloos.com/tag/%EC%9D%BC%EB%A1%A0%EB%A8%B8%EC%8A%A4%ED%81%AC%E3%85%8E" rel="tag" class="tag_level_1">일론머스크ㅎ</a>
+<a href="http://est0que.egloos.com/tag/%EC%A0%9C%EC%9E%84%EC%8A%A4%EB%A9%94%EC%9D%B4" rel="tag" class="tag_level_2">제임스메이</a>
+<a href="http://est0que.egloos.com/tag/gta5" rel="tag" class="tag_level_3">gta5</a>
+<a href="http://est0que.egloos.com/tag/%ED%86%B1%EA%B8%B0%EC%96%B4" rel="tag" class="tag_level_2">톱기어</a>
+<a href="http://est0que.egloos.com/tag/%ED%99%94%EC%84%B1%EC%8B%9D%EB%AF%BC%EC%A7%80" rel="tag" class="tag_level_1">화성식민지</a>
+<a href="http://est0que.egloos.com/tag/%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8" rel="tag" class="tag_level_1">마이크로소프트</a>
+<a href="http://est0que.egloos.com/tag/bmw" rel="tag" class="tag_level_2">bmw</a>
+<a href="http://est0que.egloos.com/tag/%ED%95%9C%EA%B8%80%ED%8C%90" rel="tag" class="tag_level_1">한글판</a>
+<a href="http://est0que.egloos.com/tag/%EC%95%84%EB%A7%88%EC%A1%B4" rel="tag" class="tag_level_1">아마존</a>
+<a href="http://est0que.egloos.com/tag/%EB%8B%A8%ED%8E%B8%EC%98%81%ED%99%94" rel="tag" class="tag_level_1">단편영화</a>
+<a href="http://est0que.egloos.com/tag/%ED%8F%AC%EB%A5%B4%EC%9E%90" rel="tag" class="tag_level_2">포르자</a>
+<a href="http://est0que.egloos.com/tag/%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4X" rel="tag" class="tag_level_2">스페이스X</a>
+<a href="http://est0que.egloos.com/tag/2016" rel="tag" class="tag_level_1">2016</a>
+<a href="http://est0que.egloos.com/tag/%ED%81%B4%EB%9D%BC%EC%9D%B4%EB%B8%8C%EC%98%A4%EC%9B%AC" rel="tag" class="tag_level_1">클라이브오웬</a>
+<a href="http://est0que.egloos.com/tag/%EC%9C%88%EB%8F%84%EC%9A%B010" rel="tag" class="tag_level_2">윈도우10</a>
+<a href="http://est0que.egloos.com/tag/5%EC%8B%9C%EB%A6%AC%EC%A6%88" rel="tag" class="tag_level_1">5시리즈</a>
+<a href="http://est0que.egloos.com/tag/%EC%A0%9C%EB%A0%88%EB%AF%B8%ED%81%B4%EB%9D%BD%EC%8A%A8" rel="tag" class="tag_level_2">제레미클락슨</a>
+<a href="http://est0que.egloos.com/tag/%EB%A6%AC%EC%B2%98%EB%93%9C%ED%95%B4%EB%A8%BC%EB%93%9C" rel="tag" class="tag_level_2">리처드해먼드</a>
+<a href="http://est0que.egloos.com/tag/%ED%94%84%EB%9D%BC%EC%9E%84" rel="tag" class="tag_level_1">프라임</a>
+<a href="http://est0que.egloos.com/tag/%ED%99%94%EC%84%B1" rel="tag" class="tag_level_1">화성</a>
+
+            <div class="allview">
+              <a href="http://est0que.egloos.com/tag">태그 전체보기</a>
+            </div>
+          </div>
+        </div>
+        <div id="sidebar5_blank" class="blank"></div>
+      </div>
+      
+      <div id="section_sidebar6" class="column">
+        <div class="widget menu_calendar">
+          
+          <h3>달력</h3>
+          <div class="widget_content">
+                        <div class="cal_month f_clear">
+            <span class="prev"><a title="이전달" href="http://est0que.egloos.com/archives/2016/12">이전달</a></span>
+            <span class="now"><a title="2017년 01월" href="http://est0que.egloos.com/archives/2017/01">2017년 01월</a></span>
+            <span class="next"><a title="다음달" href="http://est0que.egloos.com/archives/2017/2">다음달</a></span>
+            </div>
+            <table class="tb_cal">
+            <caption>2017년 01월</caption>
+            <tbody>
+            <tr>
+            <th class="sun">S</th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>T</th>
+            <th>F</th>
+            <th class="sat">S</th>
+            </tr>
+<tr>
+  <td class="sun">1</td>
+  <td class="on"><a href="http://est0que.egloos.com/archives/2017/01/2">2</a></td>
+  <td class="on"><a href="http://est0que.egloos.com/archives/2017/01/3">3</a></td>
+  <td>4</td>
+  <td>5</td>
+  <td>6</td>
+  <td class="sat">7</td>
+</tr>
+<tr>
+  <td class="sun">8</td>
+  <td>9</td>
+  <td>10</td>
+  <td>11</td>
+  <td>12</td>
+  <td>13</td>
+  <td class="sat">14</td>
+</tr>
+<tr>
+  <td class="on sun"><a href="http://est0que.egloos.com/archives/2017/01/15">15</a></td>
+  <td>16</td>
+  <td>17</td>
+  <td>18</td>
+  <td>19</td>
+  <td>20</td>
+  <td class="sat">21</td>
+</tr>
+<tr>
+  <td class="sun">22</td>
+  <td>23</td>
+  <td>24</td>
+  <td>25</td>
+  <td class="today on"><a href="http://est0que.egloos.com/archives/2017/01/26">26</a></td>
+  <td>27</td>
+  <td class="sat">28</td>
+</tr>
+<tr>
+  <td class="sun">29</td>
+  <td>30</td>
+  <td>31</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+
+            </tbody>
+            </table>
+            
+          </div>
+        </div>
+        <div id="sidebar6_blank" class="blank"></div>
+      </div>
+    </div>
+    
+    <div class="footer f_clear">
+      <div class="license">
+        <span class="skinby">Designed by <a href="http://est0que.egloos.com/est0que.tistory.com">Estoque</a></span>
+      </div>
+    </div>
+  </div>
+</div><iframe src="./base_files/send.html" style="width: 0px; height: 0px; border: 0px solid #fff;"></iframe>
+<img width="0" height="0" border="0" src="./base_files/egloo_pds.php" alt="">
+<form id="trackfrom" name="trackfrom" method="post" action="http://est0que.egloos.com/9914414">
+<input type="hidden" name="url" value="">
+<input type="hidden" name="title" value="">
+<input type="hidden" name="trburl" value="">
+</form>
+<div style="z-index:9901;top:764px;left:169px;display:none;" id="egloo_bookmark" class="popupWrap">
+    <div class="popupTitle">이글루링크 추가하기</div>
+    <dl class="popupBody">
+        <dt class="no-arrow" style="background:none;font-size:12px;text-align:center;">
+            <span id="egloo-bookmark-url" style="color:#0F71A1;"></span>
+            (<span id="egloo-bookmark-name"></span>)을(를)</dt>
+        <dd class="notice" style="margin:0;padding:0 0 0 8px;line-height:1.8em;color:#000;font-size:12px;text-align:center;">이글루링크로 추가하시겠습니까? 추가하시려면 그룹선택을 하세요.</dd>
+        <dd class="notice weak" style="margin:0;padding:0 0 0 8px;line-height:1.8em;font-size:11px;color:#666666;text-align:center;">(그룹선택 하지 않는 경우, 최상단 목록에 추가됩니다.)</dd>
+        <dd class="egloo-bookmark-group" style="margin:0;padding:10px 0 8px;line-height:1.8em;text-align:center;color:#333;font-size:12px;text-align:center;">그룹선택 :
+            <select name="groupID" id="egloo-bookmark-groupID" style="font-family:&#39;돋움&#39;,&#39;dotum&#39;,&#39;Trebuchet MS&#39;,Sans-serif;margin-left:10px;"><option value="000">그룹선택없음</option></select></dd>
+        <dd class="buttons">
+            <input type="button" value="지금 확인" onfocus="blur();" onclick="Modal.insertBookmark(true);" class="button btn24 btn_bold">
+            <input type="button" value="나중에 확인" onfocus="blur();" onclick="Modal.insertBookmark(false);" class="button btn24 btn_weak">
+        </dd>
+        <dd class="close" onclick="Modal.close();"><img src="./base_files/button_popup_close.gif" alt="이글루링크 취소" title="이글루링크 취소"></dd>
+    </dl>
+</div>
+<!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,"script","https://connect.facebook.net/en_US/fbevents.js");
+
+    fbq("init", "654342331381106");
+    fbq("track", "PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=654342331381106&amp;ev=PageView&amp;noscript=1"
+    /&gt;</noscript>
+<!-- End Facebook Pixel Code -->
+
+<div id="modal_overlay" style="position: absolute; top: 0px; left: 0px; z-index: 9990; display: none;"></div><div id="modal_container" style="display: none;"></div><div id="modal_loading" style="display: none;"></div><div id="modal_overlay" style="display: none; position: absolute; top: 0px; left: 0px; z-index: 9900; opacity: 0.3; background-color: rgb(0, 0, 0); height: 2707px; width: 100%;"></div></body></html>
